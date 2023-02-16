@@ -1,26 +1,20 @@
-function updateObj (obj1, obj2) {
-    let keys1 = Object.keys(obj1);
-    let keys2 = Object.keys(obj2);
-
-    keys1.forEach(function(item, i) {
-        keys2.forEach(function(secondItem, secondI) {
-            if (keys1[i] === keys2[secondI]) {
-                obj1[item] = obj2[secondItem];
-            }
-        })
-    });
-
+function updateObj(obj1, obj2) {
+    for(const key in obj1) {
+        if(obj2.hasOwnProperty(key)) {
+            obj1[key] = obj2[key];
+        }
+    }
     return obj1;
 }
 
 obj1 = {
-    foo: 'foo',
-    bar: 'bar'
+    foo: '1',
+    bar: '2'
 }
 
 obj2 = {
-    bar: 'foo',
-    some: 'somesome'
+    bar: '3',
+    some: 'pigaliza'
 }
 
 console.log(updateObj(obj1, obj2)); // {foo: 'foo', bar: 'foo'}
