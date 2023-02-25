@@ -1,11 +1,6 @@
-let arr = ["HTML", "JavaScript", "CSS"];
-
-let sorted = copySorted(arr);
-
-console.log( sorted ); // CSS, HTML, JavaScript
-console.log( arr ); // HTML, JavaScript, CSS (без изменений)
-
-function copySorted(arr) {
-  let newArr = arr.slice();
-  return newArr.sort();
+function count(obj) {
+  console.log(Object.keys(obj).length)
+  return Object.keys(obj).length;
 }
+
+count({some: 1, another: 3})
