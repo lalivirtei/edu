@@ -1,6 +1,3 @@
-function count(obj) {
-  console.log(Object.keys(obj).length)
-  return Object.keys(obj).length;
-}
+let myDate = new Date('2012-02-20T03:12');
 
-count({some: 1, another: 3})
+console.log(myDate.getMonth())
