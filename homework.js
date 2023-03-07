@@ -1,15 +1,11 @@
-class FormatError extends SyntaxError {
-  constructor(msg) {
-    super(msg);
-    this.name = this.constructor.name;
-  }
-}
+let animals = ["тигр", "ёж", "енот", "ехидна", "АИСТ", "ЯК"];
 
-let err = new FormatError("ошибка форматирования");
+// ... ваш код ...
+let formatter = new Intl.Collator('ru');
 
-console.log( err.message ); // ошибка форматирования
-console.log( err.name ); // FormatError
-console.log( err.stack ); // stack
+animals.sort((a, b) => {
+  return formatter.compare(a, b);
+})
 
-console.log( err instanceof FormatError ); // true
-console.log( err instanceof SyntaxError ); // true (пот
+
+console.log( animals ); // АИСТ,ёж,енот,ехидна,тигр,ЯК
