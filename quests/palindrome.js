@@ -1,12 +1,12 @@
 function isPalindrome(str) {
-    let val = false;
-    let newStr = str.split('').reverse().join('');
+  let val = false;
+  let newStr = str.split('').reverse().join('');
 
-    if (newStr === str) {
-        val = true;
-    }
+  if (newStr === str) {
+    val = true;
+  }
 
-    return val;
+  return val;
 }
 
 console.log(isPalindrome('тест')); // false

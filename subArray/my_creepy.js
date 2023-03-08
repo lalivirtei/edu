@@ -7,7 +7,7 @@ function getMaxSubSum(arr) {
   let currSum = 0;
   let maxSum = 0;
 
-  for(let i = getPosIndex(arr); i < arr.length; i++) {
+  for (let i = getPosIndex(arr); i < arr.length; i++) {
     if (i === -1) return 0;
     maxSum = Math.max(sum, currSum);
 
@@ -64,7 +64,7 @@ function getMaxSubSum(arr) {
 function getPosIndex(arr, startAt = 0) {
   let i = startAt;
   while (arr[i] <= 0 && i < arr.length) {
-    if (i === arr.length -1 && arr[i] < 0) return -1;
+    if (i === arr.length - 1 && arr[i] < 0) return -1;
     i++;
   }
   return i;
@@ -73,7 +73,7 @@ function getPosIndex(arr, startAt = 0) {
 function getNegIndex(arr, startAt = 0) {
   let i = startAt;
   while (arr[i] >= 0 && i < arr.length) {
-    if (i === arr.length -1 && arr[i] > 0) return -1;
+    if (i === arr.length - 1 && arr[i] > 0) return -1;
     i++;
   }
   return i;
@@ -81,7 +81,7 @@ function getNegIndex(arr, startAt = 0) {
 
 function summarize(arr, startPos = 0, endPos = arr.length) {
   let sum = 0;
-  for(let i = startPos; i < endPos; i++) {
+  for (let i = startPos; i < endPos; i++) {
     sum += arr[i];
   }
   return sum;
@@ -91,4 +91,4 @@ function summarize(arr, startPos = 0, endPos = arr.length) {
 // console.log(getNegIndex([4, 4, -1, 3, 3, 3, 3, 3, 3, -1, -1, 1], 3))
 // console.log(summarize([-1, -2, -3, 2, 2], 1, 3))
 
-console.log(getMaxSubSum([2, -8, 5, -1, 2, -3, 2]  ))
+console.log(getMaxSubSum([2, -8, 5, -1, 2, -3, 2]))

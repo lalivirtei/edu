@@ -1,6 +1,6 @@
 /* 1 */
-console.log( sum(1)(2) ); // = 3
-console.log( sum(5)(-1) ); // = 4
+console.log(sum(1)(2)); // = 3
+console.log(sum(5)(-1)); // = 4
 
 function sum(num) {
   return function (num2) {
@@ -22,14 +22,14 @@ function inArray(arr) {
 }
 
 let arr = [1, 2, 3, 4, 5, 6, 7];
-console.log( arr.filter(inBetween(3, 6)) ); // 3,4,5,6
-console.log( arr.filter(inArray([1, 2, 10])) ); // 1,2
+console.log(arr.filter(inBetween(3, 6))); // 3,4,5,6
+console.log(arr.filter(inArray([1, 2, 10]))); // 1,2
 
 /* 3 */
 let users = [
-  { name: "John", age: 20, surname: "Johnson" },
-  { name: "Pete", age: 18, surname: "Peterson" },
-  { name: "Ann", age: 19, surname: "Hathaway" }
+  {name: "John", age: 20, surname: "Johnson"},
+  {name: "Pete", age: 18, surname: "Peterson"},
+  {name: "Ann", age: 19, surname: "Hathaway"}
 ];
 users.sort(byField('name'));
 console.log(users)

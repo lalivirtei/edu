@@ -24,6 +24,7 @@ function sumTo(num) {
 // --- factorial
 
 console.log(factorial(5));
+
 function factorial(num) {
   if (num <= 1) {
     return 1;

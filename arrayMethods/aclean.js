@@ -8,7 +8,7 @@ function aclean(arr) {
   arr.forEach((current, index) => {
     console.log('current: ', current);
     let hasDuplicateFurther = false;
-    for(let next of arr.slice(index + 1)) {
+    for (let next of arr.slice(index + 1)) {
       console.log('  next: ', next);
       let currentMap = getLetters(current);
       let nextMap = getLetters(next);

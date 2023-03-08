@@ -12,7 +12,7 @@ let meetup = {
 room.occupiedBy = meetup;
 meetup.self = meetup;
 
-console.log( JSON.stringify(meetup, function replacer(key, value) {
+console.log(JSON.stringify(meetup, function replacer(key, value) {
   if (key !== '' && value === meetup) {
     return undefined;
   }

@@ -6,7 +6,7 @@ function camelize(str) {
     return item[0] ? item[0].toUpperCase() + item.substring(1) : '';
   });
 
-  if(str[0] !== '-') {
+  if (str[0] !== '-') {
     arr[0] = arr[0][0].toLowerCase() + arr[0].substring(1);
   }
 

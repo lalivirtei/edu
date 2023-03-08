@@ -28,7 +28,15 @@
 </script>
 
 <!-- скрипт со спецификацией (describe, it...) -->
-<script src="test.js"></script>
+<script>
+  describe("pow", function () {
+
+    it("возводит в степень n", function () {
+      assert.equal(pow(2, 3), 8);
+    });
+
+  });
+</script>
 
 <!-- элемент с id="mocha" будет содержать результаты тестов -->
 <div id="mocha"></div>
