@@ -18,9 +18,22 @@
   function clear(elem) {
     elem.innerHTML = '';
   }
-
   clear(document.querySelector('#elem')); // очищает список
 
+  function createList() {
+    let listEl = document.querySelector('#elem');
+    let userText = 'fish';
+
+    while(true) {
+      userText = prompt("Enter something: ");
+      if (!userText) break;
+      let el = document.createElement(`li`);
+      el.textContent = userText;
+      listEl.append(el);
+    }
+  }
+
+  createList();
 
 </script>
 
