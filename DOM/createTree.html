@@ -33,19 +33,28 @@
   let container = document.getElementById('container');
   createTree(container, data); // создаёт дерево в контейнере
 
-  function createTree(container, data) {
+  function createTree(container, obj) {
+    container.append(createTreeDom(obj));
+  }
+
+  function createTreeDom(obj) {
+    if (!Object.keys(obj).length) return;
+
     let ul = document.createElement('ul');
-    container.append(ul);
 
-    for (let key in data) {
+    for (let key in obj) {
       let li = document.createElement('li');
-      li.textContent = key;
-      ul.append(li);
+      li.innerHTML = key;
 
-      for (let innerKey in data[key]) {
-        createTree(li, data[key]);
+      let childrenUl = createTreeDom(obj[key]);
+      if (childrenUl) {
+        li.append(childrenUl);
       }
+
+      ul.append(li);
     }
+
+    return ul;
   }
 </script>
 </body>
