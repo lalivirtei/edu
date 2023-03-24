@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  #hours {
+    color: red;
+  }
+
+  #minutes {
+    color: green;
+  }
+
+  #seconds {
+    color: blue;
+  }
+</style>
+<body>
+
+<span id="hours">hh</span>:<span id="minutes">mm</span>:<span id="seconds">ss</span>
+<br>
+<button id="start">Start</button>
+<button id="stop">Stop</button>
+
+<script>
+
+  let timer;
+  let hoursEl = document.getElementById('hours');
+  let minutesEl = document.getElementById('minutes');
+  let secondsEl = document.getElementById('seconds');
+
+  document.getElementById('start').onclick = function () {
+    updateClock();
+    timer = setInterval(function () {
+      updateClock();
+    }, 1000)
+  }
+
+  document.getElementById('stop').onclick = function () {
+    clearInterval(timer);
+  }
+
+  function updateClock() {
+    let date = new Date;
+    hoursEl.textContent = date.getHours().toString();
+    minutesEl.textContent = date.getMinutes().toString();
+    secondsEl.textContent = date.getSeconds().toString();
+  }
+</script>
+</body>
+</html>
